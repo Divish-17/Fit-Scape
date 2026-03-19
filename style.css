@@ -23,7 +23,7 @@ body {
     width: 100%;
     background-color: #0d0d0d;
     scroll-behavior: smooth;
-    cursor: none;
+    cursor: auto;
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
