@@ -1,0 +1,216 @@
+/* body {
+    background-color: #1a1a1a;
+    color: #f9c03c;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  #createGroupButton {
+    background-color: #1a1a1a;
+    color: #f9c03c;
+    border: 2px solid #f9c03c;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #createGroupButton:hover {
+    background-color: #000000;
+    box-shadow: 0 0 10px #f9c03c;
+  }
+  
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 400px;
+    color: #fff;
+  }
+  
+  .popup input, .popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #f9c03c;
+    border-radius: 5px;
+  }
+  
+  .popup button {
+    background-color: #f9c03c;
+    color: #1a1a1a;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+  }
+  
+  .popup button:hover {
+    background-color: #e0a900;
+  }
+  
+  #successMessage {
+    display: none;
+    background-color: #f9c03c;
+    color: #1a1a1a;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+   */
+/* General body styles */
+/* General body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f9c03c;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+  }
+  
+  /* Create Group button */
+  /* Button styles for both Create and View buttons */
+.createGroupButtons {
+  background-color: #1a1a1a;
+  margin-top: 20px;
+  margin: 20px;
+  color: #f9c03c;
+  border: 2px solid #f9c03c;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect applied to both buttons using the class selector */
+.createGroupButtons:hover {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 20px #f9c03c;
+  transform: scale(1.1);
+}
+
+  
+  /* Popup background and positioning */
+  .popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.4s ease;
+    color: #f9c03c;
+  }
+  
+  /* When the popup is visible */
+  .popup.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .box{
+    margin-right: 20px;
+  }
+  
+  /* Input fields */
+  .popup input, .popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border: 2px solid #f9c03c;
+    background-color: #333;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .popup input:focus, .popup textarea:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 10px #f9c03c;
+  }
+  
+  /* Create and Cancel buttons inside the popup */
+  .popup button {
+    background-color: #f9c03c;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(249, 192, 60, 0.5);
+  }
+  
+  .popup button:hover {
+    background-color: #e0a900;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(249, 192, 60, 0.8);
+  }
+  
+  /* Success message after creating the group */
+  #successMessage {
+    display: none;
+    background-color: #f9c03c;
+    color: #1a1a1a;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease, pulse 1.5s infinite;
+    text-align: center;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Pulse animation for the success message */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Cancel button specific styling */
+  #cancelPopup {
+    background-color: #444;
+    color: #f9c03c;
+    transition: background-color 0.3s ease;
+    border: 1px solid #f9c03c;
+  }
+  
+  #cancelPopup:hover {
+    background-color: #555;
+  }
+  

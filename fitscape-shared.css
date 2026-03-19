@@ -1,0 +1,360 @@
+/* =====================================================
+   FitScape – Shared Design System
+   Import this file in every sub-page for consistency
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+    --fs-bg:         #0d0d0d;
+    --fs-bg-2:       #1a1a1a;
+    --fs-bg-3:       #242424;
+    --fs-card:       #2a2a2a;
+    --fs-gold:       #ffc107;
+    --fs-gold-dark:  #e0a800;
+    --fs-gold-glow:  rgba(255, 193, 7, 0.25);
+    --fs-text:       #f0f0f0;
+    --fs-muted:      #aaaaaa;
+    --fs-border:     rgba(255, 193, 7, 0.25);
+    --fs-radius:     14px;
+    --fs-radius-lg:  20px;
+    --fs-shadow:     0 8px 32px rgba(0, 0, 0, 0.4);
+    --fs-shadow-glow: 0 8px 32px rgba(255, 193, 7, 0.15);
+    --fs-transition: all 0.3s ease;
+    --fs-font:       'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fs-bg);
+    color: var(--fs-text);
+    font-family: var(--fs-font);
+    font-size: 1rem;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--fs-bg-2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--fs-gold);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fs-gold-dark);
+}
+
+/* ── Sub-page Navbar ── */
+.fs-subnav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--fs-border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.fs-subnav .fs-brand {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--fs-gold);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.fs-subnav .fs-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    background: transparent;
+    color: var(--fs-gold);
+    border: 1.5px solid var(--fs-gold);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--fs-transition);
+    white-space: nowrap;
+}
+
+.fs-subnav .fs-back-btn:hover {
+    background: var(--fs-gold);
+    color: #000;
+    transform: translateX(-3px);
+}
+
+/* ── Page Heading ── */
+.fs-page-title {
+    text-align: center;
+    color: var(--fs-gold);
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.fs-page-subtitle {
+    text-align: center;
+    color: var(--fs-muted);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-bottom: 2.5rem;
+}
+
+/* ── Cards ── */
+.fs-card {
+    background: var(--fs-card);
+    border: 1.5px solid var(--fs-border);
+    border-radius: var(--fs-radius);
+    padding: 1.75rem;
+    transition: var(--fs-transition);
+    box-shadow: var(--fs-shadow);
+}
+
+.fs-card:hover {
+    border-color: var(--fs-gold);
+    box-shadow: var(--fs-shadow-glow);
+    transform: translateY(-4px);
+}
+
+/* ── Buttons ── */
+.fs-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--fs-gold);
+    color: #000;
+    font-family: var(--fs-font);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--fs-transition);
+}
+
+.fs-btn-primary:hover {
+    background: var(--fs-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--fs-gold-glow);
+}
+
+.fs-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    color: var(--fs-gold);
+    font-family: var(--fs-font);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--fs-gold);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--fs-transition);
+}
+
+.fs-btn-outline:hover {
+    background: var(--fs-gold);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* ── Form Elements ── */
+.fs-label {
+    display: block;
+    color: var(--fs-gold);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.3px;
+}
+
+.fs-input,
+.fs-select,
+.fs-textarea {
+    width: 100%;
+    background: var(--fs-bg-3);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: var(--fs-text);
+    font-family: var(--fs-font);
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+    transition: var(--fs-transition);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.fs-input:focus,
+.fs-select:focus,
+.fs-textarea:focus {
+    border-color: var(--fs-gold);
+    box-shadow: 0 0 0 3px var(--fs-gold-glow);
+    background: var(--fs-bg-2);
+}
+
+.fs-input::placeholder,
+.fs-textarea::placeholder {
+    color: var(--fs-muted);
+    opacity: 0.8;
+}
+
+.fs-textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* ── Divider ── */
+.fs-divider {
+    border: none;
+    border-top: 1px solid var(--fs-border);
+    margin: 1.5rem 0;
+}
+
+/* ── Footer ── */
+.fs-footer {
+    background: var(--fs-bg-2);
+    border-top: 1px solid var(--fs-border);
+    padding: 3rem 1.5rem 1.5rem;
+    margin-top: auto;
+}
+
+.fs-footer-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--fs-gold);
+    text-decoration: none;
+}
+
+.fs-footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.fs-footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.fs-footer-links a {
+    color: var(--fs-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--fs-transition);
+}
+
+.fs-footer-links a:hover {
+    color: var(--fs-gold);
+    padding-left: 4px;
+}
+
+.fs-footer-copy {
+    border-top: 1px solid var(--fs-border);
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--fs-muted);
+    font-size: 0.875rem;
+}
+
+/* ── Bootstrap Overrides (for sub-pages using Bootstrap 5) ── */
+.bg-dark       { background-color: var(--fs-bg) !important; }
+.bg-secondary  { background-color: var(--fs-card) !important; }
+.text-warning  { color: var(--fs-gold) !important; }
+.border-warning{ border-color: var(--fs-gold) !important; }
+
+.btn-warning {
+    background-color: var(--fs-gold);
+    border-color: var(--fs-gold);
+    color: #000;
+    font-weight: 700;
+}
+
+.btn-warning:hover {
+    background-color: var(--fs-gold-dark);
+    border-color: var(--fs-gold-dark);
+    color: #000;
+}
+
+.btn-outline-warning {
+    border-color: var(--fs-gold);
+    color: var(--fs-gold);
+}
+
+.btn-outline-warning:hover {
+    background-color: var(--fs-gold);
+    color: #000;
+}
+
+/* Bootstrap card overrides */
+.card {
+    background-color: var(--fs-card);
+    border-color: var(--fs-border);
+}
+
+.card-header.bg-warning {
+    background-color: var(--fs-gold) !important;
+    color: #000 !important;
+}
+
+/* ── Utility Classes ── */
+.fs-glow-text {
+    text-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+}
+
+.fs-section {
+    padding: 4rem 1.5rem;
+}
+
+.fs-section-alt {
+    padding: 4rem 1.5rem;
+    background: var(--fs-bg-2);
+}
+
+/* ── Responsive Helpers ── */
+@media (max-width: 768px) {
+    .fs-section,
+    .fs-section-alt {
+        padding: 2.5rem 1rem;
+    }
+
+    .fs-subnav {
+        padding: 0.6rem 1rem;
+    }
+}

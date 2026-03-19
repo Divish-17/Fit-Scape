@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    scroll-behavior: smooth;
+    cursor:none;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 50px; /* Size of the circular background */
+    height: 50px;
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(255, 165, 0, 0.2); /* Orange translucent background */
+    pointer-events: none; /* So it doesn't block clicks */
+    z-index: 1000; /* Always on top */
+    transform: translate(-50%, -50%); /* Center the circle on the pointer */
+    transition: transform 0.1s ease-in-out;
+}
+/* Inner colored dot */
+.custom-cursor::after {
+    content: '';
+    width: 10px; /* Size of the dot */
+    height: 10px;
+    background-color: orange; /*Color of the dot */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 40px;
+  }
+
+.section1{
+    height: 500px;
+    margin-top: 80px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.section1-image{
+    height: 400px;
+    width: 400px;
+    background-color: black;
+    background-image: url(Trainer-index-Images/couple.png);
+    background-size: contain;
+}
+
+.section1-box1{
+    height: 400px;
+    width: 800px;
+}
+
+.section1-box1 h1{
+    font-size: 55px;
+    margin-bottom: 0px;
+    margin-left: 80px;
+    color: whitesmoke;
+    text-shadow: 2px 2px #ff0000;
+}
+#section1-fitscape-text{
+    color: orange;
+    text-shadow: 1px 1px black;
+}
+#section1-fitscape-text:hover{
+    color: orange;
+    transition: 0.25s;
+    text-shadow: 1px 1px whitesmoke;
+}
+.section1-box1 p{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    opacity: 0.5;
+    color: white;
+}
+
+.section1-box1 button{
+    margin-top: 20px;
+    margin-left: 80px;
+    border-radius: 30px;
+}
+.section1-box1 button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.section2-up h1{
+    background-color: black;
+    color: whitesmoke;
+    height: 150px;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    text-shadow: 2px 2px orange;
+}
+.section2-up h1:hover{
+    color: orange;
+    transition: 0.25s;
+    text-shadow: 2px 2px black;
+}
+.section2{
+    height: 500px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.section2-card{
+    height: 450px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    transition:  all 0.8s; /* ye speed ke liye */
+}
+.section2-card:hover{
+    transform: scale(1.08);
+}
+.section2-card-image1{
+    background-image: url(Trainer-index-Images/coach-phone.webp);
+    background-size: cover;
+    height: 300px;
+    width: 80%;
+    position: absolute; 
+    z-index: 2;
+    
+}
+.section2-card-image2{
+    background-image: url(Trainer-index-Images/coach-notepad.png);
+    background-size: cover;
+    height: 300px;
+    width: 80%;
+    position: absolute; 
+    z-index: 2;
+    margin-top: 10px;
+}
+.section2-card-image3{
+    background-image: url(Trainer-index-Images/coach-clock.png);
+    background-size: cover;
+    height: 300px;
+    width: 80%;
+    position: absolute; 
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.section2-card-text{
+    width: 100%;
+    height: 100%;
+    margin-top: 220px;
+    padding-top: 95px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-align: center;
+    color: azure;
+    font-size: 37px;
+}
+.section2-card-text:hover{
+    color: orange;
+    border: 1px solid orange;
+}
+
+.section3-up h1{
+    background-color: black;
+    color: orange;
+    height: 150px;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    /* text-shadow: 2px 2px orange; */
+}
+
+
+/* section3 */
+.section3-up{
+    /* background-color: green; */
+    width: 100%;
+    height: 92px;
+    margin-top: 150px;
+    /* text-align: center; */
+    
+}
+.section3-up h1:hover{
+    color: whitesmoke;
+    transform: scale(1.08);
+    transition: 0.5s;
+    text-shadow: 2px 2px black;
+}
+.section-n{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+.why-box{
+    height: auto;
+    width: 95%;
+    background-color: black;
+}
+.why-box-inner{
+    height: auto;
+    width: 85%;
+    background-color: black;
+    display: flex;
+    padding-left: 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.why-box-sub{
+    height: auto;
+    width: 580px;
+    background-color: black;
+    border: 2px solid orange;
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-left: 40px;
+    margin-bottom: 30px;
+    margin-left: 5%;
+}
+.why-box-sub h5{
+    height: auto;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Aspira Bold",Sans-serif;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+.why-box-sub p{
+    font-size: 22px;
+    font-family: Aspira,Sans-serif;
+    color: grey;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+.why-box-sub h5:hover{
+    color: orange;
+}
+.why-box-sub p:hover{
+    color: white;
+    opacity: 0.8;
+}
+.circle-number{
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: 950;
+    border: 4px solid whitesmoke;
+    margin-top: 55px;
+    text-shadow: 3px 3px black;
+}
+
+
+/* footer */
+.footer-section5{
+    height: 650px;
+    background-color: black;
+    display: flex;
+    padding: 50px 24px 0px;
+    margin-top: 100px;
+}
+.footer{
+    background-color: black;
+    width: 100%;
+    padding-right: 150px;
+}
+.footer-fitscape{
+    width: 100%;
+    height:70px;
+    background-color: black;
+    color: orange;
+    display: flex;
+    align-items: center;    
+    font-size: 70px;
+    padding-left: 50px;
+}
+.footer-section2{
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    padding-top: 30px;
+    display: flex;
+}
+
+.footer-section2-box1{
+    width: 30%;
+    height: 300px;
+    background-color: black;
+    padding-top: 30px;
+    padding-left: 50px;
+    margin-right: 100px;
+}
+
+#footer-section1{
+    margin: 10px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.footer-section2-boxes{
+    height: auto;
+    width: 15%;
+    /* background-color: black; */
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section2-boxes-divs{
+    height: 25px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: black;
+    color: whitesmoke;
+}
+.footer-section2-btn{
+    background-color: black;
+    color: grey;
+    /* opacity: 0.5; */
+    border: none;
+}
+.footer-section2-btn:hover{
+    color: whitesmoke;
+    transform: scale(1.01);
+}
+.footer-section2-coach{
+    background-color: black;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section2-coach h2{
+    background-color: black;
+    color: #ffa500;
+    font-size: 30px;
+    text-align: right;
+}
+.footer-section2-coach h2:hover{
+    transform: scale(1.2);
+    color: #FFB733;
+    transition: 0.5s;
+}
+
+.custom-button{
+    margin-top: 35px ;
+    background-color: black;
+    height: auto;
+    display: flex;
+    justify-content: end;
+}

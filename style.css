@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+    --bs-body-bg:    #0d0d0d;
+    --bs-body-color: #f0f0f0;
+    --bs-primary:    #ffc107;
+    --bs-secondary:  #2a2a2a;
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #0d0d0d;
+    scroll-behavior: smooth;
+    cursor: none;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ── Custom Cursor ── */
+.custom-cursor {
+    position: fixed;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 193, 7, 0.12);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    box-shadow: 0 0 16px rgba(255, 193, 7, 0.25);
+}
+
+.custom-cursor::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px #ffc107;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffc107;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e0a800;
+}
+
+/* ── Navbar ── */
+.navbar {
+    padding: 0.9rem 0;
+    background-color: rgba(13, 13, 13, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 193, 7, 0.15);
+}
+
+.navbar-brand {
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.dropdown-menu-dark {
+    background-color: #1a1a1a !important;
+    border: 1px solid rgba(255, 193, 7, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dropdown-menu-dark .dropdown-item {
+    color: #f0f0f0 !important;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+    background-color: #ffc107;
+    color: #000 !important;
+}
+
+/* ── Hero Section ── */
+.hero-section {
+    margin-top: 76px;
+    background: linear-gradient(135deg, #0d0d0d 0%, #141414 50%, #1a1a1a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-section h1 {
+    line-height: 1.15;
+    text-shadow: 0 2px 20px rgba(255, 193, 7, 0.15);
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffc107;
+    line-height: 1.1;
+}
+
+.hero-stat-label {
+    font-size: 0.78rem;
+    color: #aaaaaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+.hero-image-banner {
+    width: 100%;
+    height: 460px;
+    background-image: url('FitScape-Index_images/ban1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    box-shadow: 0 16px 60px rgba(255, 193, 7, 0.12), 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: slideInRight 0.8s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ── Section Backgrounds ── */
+.bg-dark {
+    background-color: #0d0d0d !important;
+}
+
+.bg-dark-2 {
+    background-color: #141414 !important;
+}
+
+.bg-secondary {
+    background-color: #2a2a2a !important;
+}
+
+/* ── Feature Cards ── */
+.feature-card {
+    border: 1.5px solid rgba(255, 193, 7, 0.25) !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 48px rgba(255, 193, 7, 0.18);
+    border-color: #ffc107 !important;
+}
+
+.feature-card img {
+    height: 240px;
+    object-fit: cover;
+    border-bottom: 1.5px solid rgba(255, 193, 7, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.04);
+}
+
+.feature-card .card-title {
+    color: #ffc107;
+}
+
+/* ── Tips Carousel ── */
+.tip-card {
+    background: linear-gradient(135deg, #1a1a1a, #242424);
+    border: 1.5px solid rgba(255, 193, 7, 0.2);
+    border-radius: 16px;
+    text-align: center;
+    padding: 2.5rem 2rem !important;
+    margin: 0.5rem;
+}
+
+.tip-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tip-title {
+    color: #ffc107;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.tip-text {
+    color: #c0c0c0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #ffc107;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+.carousel-indicators button {
+    background-color: rgba(255, 193, 7, 0.4) !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    border: none !important;
+}
+
+.carousel-indicators button.active {
+    background-color: #ffc107 !important;
+}
+
+/* ── Wellness Cards ── */
+.wellness-card {
+    border: 1.5px solid rgba(255, 193, 7, 0.2);
+    border-radius: 18px;
+    transition: all 0.4s ease;
+}
+
+.wellness-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffc107;
+    box-shadow: 0 16px 40px rgba(255, 193, 7, 0.18);
+}
+
+.icon-wrapper {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+    display: block;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+}
+
+/* ── Coaching Section ── */
+.coaching-image-banner {
+    width: 100%;
+    height: 420px;
+    background-image: url('FitScape-Index_images/get-coaching.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    box-shadow: 0 16px 60px rgba(255, 193, 7, 0.12);
+}
+
+.rounded-lg {
+    border-radius: 16px;
+}
+
+/* ── Footer ── */
+footer {
+    background-color: #141414 !important;
+    border-top: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+footer h5,
+footer h6 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffc107 !important;
+    padding-left: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-image-banner {
+        height: 300px;
+    }
+
+    .coaching-image-banner {
+        height: 280px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .tip-card {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem !important;
+    }
+}

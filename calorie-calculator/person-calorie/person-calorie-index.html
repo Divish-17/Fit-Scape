@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Calculator Form</title>
+    <!-- Combined CSS Styling -->
+    <style>
+        /* General form styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: white;
+            padding-top: 50px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto; /* Center the form */
+            padding: 20px;
+            background-color: #1a1a1a; /* Dark gray form background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease; /* Container transition effect */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: rgb(230, 184, 0); /* Label color to yellow */
+            transition: color 0.3s ease; /* Smooth color change on focus */
+        }
+
+        /* Input and Select styling */
+        input[type="text"],
+        select {
+            padding: 10px;
+            margin-bottom: 20px; /* Space between inputs */
+            border: 1px solid #555; /* Darker borders */
+            border-radius: 5px;
+            background-color: #333; /* Input background */
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease; /* Transition for hover and focus */
+        }
+
+        /* Hover effect for inputs */
+        input[type="text"]:hover,
+        select:hover {
+            background-color: #444; /* Slightly lighter background on hover */
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            outline: none;
+            border-color: rgb(230, 184, 0); /* Yellow border on focus */
+            background-color: #555; /* Change background on focus */
+        }
+
+        /* Container for height fields */
+        .height-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .height-container input[type="text"] {
+            flex: 1;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 15px;
+            background-color: rgb(230, 184, 0); /* Yellow background for the button */
+            color: black; /* Black text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover and active states */
+        }
+
+        /* Hover effect for the button */
+        button:hover {
+            background-color:rgb(230, 184, 0); /* Slightly darker yellow on hover */
+            transform: scale(1.05); /* Button scales up slightly on hover */
+        }
+
+        /* Active effect for the button */
+        button:active {
+            transform: scale(0.98); /* Button slightly shrinks when clicked */
+        }
+
+        /* Label hover effect */
+        label:hover {
+            color: rgb(230, 184, 0); /* Change label color to lighter yellow on hover */
+        }
+
+        /* Form container hover effect */
+        .form-container:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Increase shadow when hovered */
+        }
+    </style>
+
+    <!-- Combined JavaScript -->
+    <script>
+        // Function to handle the form submission and calculate BMR
+        function calculateBMR(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Retrieve form values
+            const age = parseInt(document.getElementById("age").value);
+            const gender = document.getElementById("gender").value;
+            const heightFeet = parseFloat(document.getElementById("height-feet").value) || 0;
+            const heightInches = parseFloat(document.getElementById("height-inches").value) || 0;
+            const heightCm = parseFloat(document.getElementById("height-cm").value);
+            const weight = parseFloat(document.getElementById("weight").value);
+            const weightUnit = document.getElementById("weight-unit").value;
+
+            let heightInCm = 0;
+
+            // Calculate height in cm based on user's input choice (either feet/inches or cm)
+            if (!isNaN(heightCm) && heightCm > 0) {
+                heightInCm = heightCm;
+            } else {
+                heightInCm = heightFeet * 30.48 + heightInches * 2.54;
+            }
+
+            // Convert weight to kilograms if entered in pounds
+            const weightInKg = weightUnit === "pounds" ? weight / 2.205 : weight;
+
+            // Validate the inputs
+            if (!age || age <= 0 || isNaN(age)) {
+                alert("Please enter a valid age.");
+                return;
+            }
+            if (heightInCm <= 0 || isNaN(heightInCm)) {
+                alert("Please enter a valid height.");
+                return;
+            }
+            if (weightInKg <= 0 || isNaN(weightInKg)) {
+                alert("Please enter a valid weight.");
+                return;
+            }
+
+            // Calculate BMR using the Mifflin-St Jeor formula
+            let bmr = 0;
+            if (gender === "male") {
+                bmr = 88.362 + 13.397 * weightInKg + 4.799 * heightInCm - 5.677 * age;
+            } else if (gender === "female") {
+                bmr = 447.593 + 9.247 * weightInKg + 3.098 * heightInCm - 4.330 * age;
+            }
+
+            // Display the calculated BMR result
+            document.getElementById("result").innerHTML = `Your Basal Metabolic Rate (BMR) is <strong>${bmr.toFixed(2)} calories/day</strong>.`;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("health-calculator").addEventListener("submit", calculateBMR);
+        });
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <form id="health-calculator">
+            <label for="age">Your Age:</label>
+            <input type="text" id="age" name="age" placeholder="Enter your age">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+
+            <label for="height-feet">Height:</label>
+            <div class="height-container">
+                <input type="text" id="height-feet" name="height-feet" placeholder="Feet">
+                <input type="text" id="height-inches" name="height-inches" placeholder="Inches">
+                <input type="text" id="height-cm" name="height-cm" placeholder="Or Centimeters">
+            </div>
+
+            <label for="weight">Your Weight:</label>
+            <input type="text" id="weight" name="weight" placeholder="Enter your weight">
+
+            <label for="weight-unit">Weight Unit:</label>
+            <select id="weight-unit" name="weight-unit">
+                <option value="pounds">Pounds (lb)</option>
+                <option value="kilograms">Kilograms (kg)</option>
+            </select>
+
+            <button type="submit" id="calculate-btn">Calculate</button>
+        </form>
+
+        <!-- Result display -->
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+</body>
+</html>

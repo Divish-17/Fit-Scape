@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="food-calorie-styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitScape Calorie Calculator</title>
+</head>
+<body>
+    <h1>FitScape Calorie Calculator</h1>
+
+    <div>
+        <label for="foodItem">Enter Food Item:</label>
+        <input type="text" id="foodItem" placeholder="e.g., Apple, Banana" onkeyup="showSuggestions()">
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    <div>
+        <label for="inputType">Select Input Type:</label>
+        <select id="inputType" onchange="toggleInputType()">
+            <option value="grams">Grams</option>
+            <option value="quantity">Quantity</option>
+        </select>
+    </div>
+
+    <div id="quantityInput">
+        <label for="quantity">Enter Quantity (in grams):</label>
+        <input type="number" id="quantity" placeholder="e.g., 100">
+    </div>
+
+    <div id="countInput" style="display:none;">
+        <label for="count">Enter Count (number of items):</label>
+        <input type="number" id="count" placeholder="e.g., 2">
+    </div>
+
+    <button onclick="addFood()" >Add Food to Meal</button>
+
+    <h2 style="margin-top: 20px;">Meal Items</h2>
+    <div id="mealItems"></div>
+
+    <h2 style="font-size: 40px;">Total Calories: <span id="totalCalories">0</span> cal</h2>
+
+    <script src="food-calorie-script.js"></script>
+</body>
+</html>

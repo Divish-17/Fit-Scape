@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitScape - Your Complete Fitness Journey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fitscape-shared.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-bold fs-4" href="#">
+                    <span class="text-warning">FitScape</span>
+                </a>
+
+                <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="bmi_cal/index.html">BMI Calculator</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="find-coach/find-coach.html">Personal Coach</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Community</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="chat-portal/creation.html">Create Group</a></li>
+                                <li><a class="dropdown-item" href="chat-portal/interface.html">Join Group</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="chat-portal/interface.html">Browse Groups</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-light" href="calorie-calculator/food-calorie/food-calorie-index.html">Calorie Calculator</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="calorie-calculator/person-calorie/person-calorie-index.html">My Nutrition</a></li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-warning btn-sm ms-2" id="home-page-sign-in-button">Sign In</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section 1: Hero Banner -->
+    <section class="hero-section pt-5 pb-5">
+        <div class="container-fluid py-5">
+            <div class="row align-items-center justify-content-center g-4">
+                <div class="col-lg-6 text-center text-lg-start px-4">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <span class="text-warning">Ready for Your</span><br>
+                        <span class="text-light">Fitness Journey?</span>
+                    </h1>
+                    <p class="lead text-light mb-4">
+                        Join thousands of users transforming their health with personalized
+                        coaching, fitness groups, and smart nutrition tracking.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap justify-content-center justify-content-lg-start">
+                        <a href="bmi_cal/index.html" class="btn btn-warning btn-lg fw-bold">Calculate BMI</a>
+                        <a href="find-coach/find-coach.html" class="btn btn-outline-warning btn-lg fw-bold">Find Coach</a>
+                    </div>
+                    <div class="d-flex gap-4 mt-5 flex-wrap justify-content-center justify-content-lg-start">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">10K+</div>
+                            <div class="hero-stat-label">Active Users</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">500+</div>
+                            <div class="hero-stat-label">Certified Coaches</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">1M+</div>
+                            <div class="hero-stat-label">Workouts Logged</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image-banner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Community Features -->
+    <section class="py-5 bg-dark-2">
+        <div class="container-fluid px-4">
+            <h2 class="text-center text-warning fw-bold mb-2 display-5">Grow Together</h2>
+            <p class="text-center text-muted mb-5">Join a community that keeps you accountable and motivated</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card bg-secondary text-white border-warning h-100">
+                        <img src="FitScape-Index_images/create-group.png" class="card-img-top" alt="Create Group">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Create a Fitness Group</h5>
+                            <p class="card-text">Start your own community with friends and fitness enthusiasts to stay motivated together.</p>
+                            <a href="chat-portal/creation.html" class="btn btn-warning w-100 fw-bold">Create Group</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card bg-secondary text-white border-warning h-100">
+                        <img src="FitScape-Index_images/join.png" class="card-img-top" alt="Join Group">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Join a Group</h5>
+                            <p class="card-text">Find groups matching your fitness goals and connect with like-minded individuals.</p>
+                            <a href="chat-portal/interface.html" class="btn btn-warning w-100 fw-bold">Join Group</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card bg-secondary text-white border-warning h-100">
+                        <img src="FitScape-Index_images/idk.png" class="card-img-top" alt="Get Help">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Need Guidance?</h5>
+                            <p class="card-text">Explore fitness tips, join expert-led sessions, and get personalized recommendations.</p>
+                            <a href="find-coach/find-coach.html" class="btn btn-warning w-100 fw-bold">Find Help</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Health Tips Carousel -->
+    <section class="py-5 bg-dark">
+        <div class="container-fluid px-4">
+            <h2 class="text-center text-warning fw-bold mb-2 display-5">Did You Know?</h2>
+            <p class="text-center text-muted mb-5">Daily tips to keep your health knowledge sharp</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="tipsCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="tip-card p-4 rounded-lg">
+                                    <div class="tip-icon">💧</div>
+                                    <h5 class="tip-title">Hydration Tip</h5>
+                                    <p class="tip-text">Drinking adequate water helps regulate body temperature and keep joints lubricated. Aim for 8 glasses a day.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="tip-card p-4 rounded-lg">
+                                    <div class="tip-icon">🥗</div>
+                                    <h5 class="tip-title">Nutrition Tip</h5>
+                                    <p class="tip-text">A balanced diet rich in fruits and vegetables can lower the risk of chronic diseases and improve energy levels.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="tip-card p-4 rounded-lg">
+                                    <div class="tip-icon">🏃</div>
+                                    <h5 class="tip-title">Exercise Tip</h5>
+                                    <p class="tip-text">Regular physical activity improves cardiovascular health and releases mood-boosting endorphins. 30 mins a day makes a big difference!</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="tip-card p-4 rounded-lg">
+                                    <div class="tip-icon">😴</div>
+                                    <h5 class="tip-title">Sleep Tip</h5>
+                                    <p class="tip-text">Getting 7–9 hours of quality sleep supports cognitive function and body recovery after workouts.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="tip-card p-4 rounded-lg">
+                                    <div class="tip-icon">🥩</div>
+                                    <h5 class="tip-title">Protein Tip</h5>
+                                    <p class="tip-text">Consume various protein sources like lean meats and nuts for muscle repair and growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#tipsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#tipsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Wellness Tools -->
+    <section class="py-5 bg-dark-2">
+        <div class="container-fluid px-4">
+            <h2 class="text-center text-warning fw-bold mb-2 display-5">Your Wellness Tools</h2>
+            <p class="text-center text-muted mb-5">Everything you need to take charge of your health</p>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="wellness-card p-4 rounded-lg bg-secondary">
+                        <div class="icon-wrapper mb-3">📊</div>
+                        <h5 class="fw-bold text-warning mb-3">Health Insights</h5>
+                        <p class="text-light mb-3">Discover myths vs. facts about health with our expert articles and quizzes.</p>
+                        <button class="btn btn-warning btn-sm fw-bold" id="home-page-article-button">Read Articles</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wellness-card p-4 rounded-lg bg-secondary">
+                        <div class="icon-wrapper mb-3">🧠</div>
+                        <h5 class="fw-bold text-warning mb-3">FitScape Quiz</h5>
+                        <p class="text-light mb-3">Test your fitness knowledge and learn something new about yourself.</p>
+                        <button class="btn btn-warning btn-sm fw-bold" id="center-quiz-button">Take Quiz</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wellness-card p-4 rounded-lg bg-secondary">
+                        <div class="icon-wrapper mb-3">🏛️</div>
+                        <h5 class="fw-bold text-warning mb-3">Government Programs</h5>
+                        <p class="text-light mb-3">Explore government health schemes and wellness programs available to you.</p>
+                        <button class="btn btn-warning btn-sm fw-bold" id="home-page-gov-button">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Personal Coaching Banner -->
+    <section class="py-5 bg-dark">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-5">
+                    <div class="coaching-image-banner"></div>
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="display-5 fw-bold text-warning mb-4">Get A Personal Coach Today</h3>
+                    <p class="lead text-light mb-4">
+                        Connect with certified fitness experts who will guide your fitness journey
+                        with personalized workout plans and nutrition advice.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-light mb-2"><strong>📞 Call Us:</strong> +91 987654321</p>
+                        <p class="text-light mb-2"><strong>📧 Email:</strong>
+                            <a href="mailto:supportemail@gmail.com" class="text-warning text-decoration-none">supportemail@gmail.com</a>
+                        </p>
+                        <p class="text-light"><strong>📍 Location:</strong> CGC LANDRAN</p>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button type="button" class="btn btn-warning btn-lg fw-bold" id="find-coach-button">Find Your Coach</button>
+                        <button type="button" class="btn btn-outline-warning btn-lg fw-bold" id="coach-hire">Become a Coach</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-light py-5">
+        <div class="container-fluid px-4">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold text-warning mb-3">FitScape</h5>
+                    <p>Join us on our mission to make everyone healthier and happier through fitness and wellness.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold text-warning mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="bmi_cal/index.html" class="text-light text-decoration-none">BMI Calculator</a></li>
+                        <li><a href="find-coach/find-coach.html" class="text-light text-decoration-none">Find Coach</a></li>
+                        <li><a href="calorie-calculator/food-calorie/food-calorie-index.html" class="text-light text-decoration-none">Calorie Calculator</a></li>
+                        <li><a href="quiz/quiz.html" class="text-light text-decoration-none">Fitness Quiz</a></li>
+                        <li><a href="schemes/gov.html" class="text-light text-decoration-none">Gov. Schemes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold text-warning mb-3">Contact Us</h6>
+                    <p class="mb-2">📧 <a href="mailto:supportemail@gmail.com" class="text-light text-decoration-none">supportemail@gmail.com</a></p>
+                    <p class="mb-2">📞 +91 987654321</p>
+                    <p>📍 CGC LANDRAN</p>
+                </div>
+            </div>
+            <hr class="border-warning mb-3">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0 text-muted">© 2024 FitScape. All rights reserved. | Built with care for your fitness journey.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index-script.js"></script>
+</body>
+</html>

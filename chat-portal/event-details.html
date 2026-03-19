@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details</title>
+  <link rel="stylesheet" href="event-details.css">
+</head>
+<body>
+  <!-- Back to Home Link -->
+  <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+      <a href="../index.html" style="color: #f9c03c; text-decoration: none; font-weight: bold; font-family: sans-serif; background: #1a1a1a; padding: 10px 15px; border-radius: 5px; border: 1px solid #f9c03c;">← Back to Home</a>
+  </div>
+
+  <div class="event-container">
+    <h1 id="eventName">Event Name</h1>
+    <div class="event-details">
+      <p id="eventDate">Date: </p>
+      <p id="eventTime">Timings: </p>
+      <p id="eventLocation">Location: </p>
+      <p id="eventCharges">Charges: </p>
+      <p id="eventDescription">Description: </p>
+    </div>
+    <div class="participants-info">
+      <p id="joinedParticipants">Joined Participants: 0</p>
+      <p id="confirmedParticipants">Confirmed Participants: 0</p>
+    </div>
+    <div class="confirmation-section">
+      <input type="checkbox" id="confirmCheckbox">
+      <label for="confirmCheckbox">I will join this event on the scheduled date.</label>
+    </div>
+    <div class="timer-section">
+      <p id="countdownTimer">Event starting in: -- days</p>
+    </div>
+    <div class="buttons-section">
+      <button id="confirmButton">Confirm</button>
+      <button id="chatButton">Chat</button>
+      <button id="closeButton">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="event-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* Base Styles */
+body {
+    background-color: #121212;
+    color: #f9c03c;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 1rem;
+}
+  
+  h1 {
+    color: #f9c03c;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+  }
+  
+  /* View Groups Button */
+  #viewGroupsButton {
+    background-color: #f9c03c;
+    color: #121212;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  #viewGroupsButton:hover {
+    background-color: #e0a900;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #f9c03c;
+  }
+  
+  /* Loading Spinner */
+  #loadingSpinner {
+    display: none;
+    margin: 20px auto;
+    border: 8px solid #f9c03c;
+    border-top: 8px solid transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Group List Layout */
+  #groupList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  /* Group Card */
+  .group-card {
+    background-color: #1a1a1a;
+    color: #f9c03c;
+    border: 2px solid #f9c03c;
+    padding: 20px;
+    border-radius: 20px;
+    width: 320px;
+    box-shadow: 0 0 25px rgba(249, 192, 60, 0.6);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .group-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(249, 192, 60, 0.9);
+    background: #000;
+  }
+  
+  /* Group Card Content */
+  .group-card h2 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #ffffff;
+  }
+  
+  .group-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  /* Join Group Button */
+  .group-card button {
+    background-color: #f9c03c;
+    color: #121212;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .group-card button:hover {
+    background-color: #e0a900;
+    box-shadow: 0 0 10px #f9c03c;
+    transform: translateY(-5px);
+  }
+  
+  /* Responsive Adjustments */
+  @media only screen and (max-width: 768px) {
+    .group-card {
+      width: 90%;
+    }
+  }
+  

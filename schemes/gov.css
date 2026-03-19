@@ -1,0 +1,77 @@
+/* =====================================================
+   Government Schemes Page – FitScape
+   ===================================================== */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Scheme Cards ── */
+.scheme-card {
+    background: #1e1e1e;
+    border: 1.5px solid rgba(255, 193, 7, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.scheme-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffc107;
+    box-shadow: 0 20px 48px rgba(255, 193, 7, 0.15);
+}
+
+.scheme-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1.5px solid rgba(255, 193, 7, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.scheme-card:hover .scheme-img {
+    transform: scale(1.04);
+}
+
+.scheme-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.scheme-title {
+    color: #ffc107;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.scheme-text {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.scheme-link {
+    align-self: flex-start;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .scheme-card {
+        margin-bottom: 0;
+    }
+}

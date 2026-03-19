@@ -1,0 +1,119 @@
+*{
+    background-color: black;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+.register-coach-body{
+    height: auto;
+    width: 100%;
+}
+.enter{
+    height: auto;
+    width: 100%;
+    color: whitesmoke;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.section1{
+    height: auto;
+    width: 90%;
+    background-color: black;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 85px;
+}
+.section1-1{
+    margin: 0px 50px;
+    background-color: black;
+    font-size: 30px;
+    color: orange;
+}
+.section1-1 hr{
+    height: 3px;
+    width: 200%;
+    background-color: orange;
+    border-radius: 20px;
+    border: 0px solid white;
+}
+.section1-2{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+.section1-2-info{
+    margin: 10px 50px ;
+    color: whitesmoke;
+    /* border: 1px solid white; */
+}
+.section1-2-info h5{
+    margin: 15px 0px;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.section1-2-info h5:hover{
+    color: grey;
+}
+.section1-2-info-input{
+    height: 40px;
+    border-radius: 10px;
+    color: whitesmoke;
+    border: 1px solid white;
+    opacity: 0.9;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.section1-2-info-input:hover{
+    box-shadow: 1.5px 1.5px grey;
+}
+.section-drop-down{
+    opacity: 0.95;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+    height: 45px;
+    width: 90px;
+}
+
+.section-drop-down:hover{
+    color: whitesmoke;
+}
+.section1-2-info textarea{
+    height: 80px;
+    width: 500px;
+}
+
+.section1-2 form{
+    margin-top: 20px;
+    /* height: 50px; */
+    font-size: 20px;
+}
+.check-rule{
+    color: white;
+    text-align: start;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+input, textarea, select{
+    color: whitesmoke;
+}
+
+.submit-button{
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+}

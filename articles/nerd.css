@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color:black;
+    line-height: 1.6;
+}
+
+/* Blog Section */
+.blog-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color:black;
+}
+
+.blog-heading h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #ecdbdb;
+    margin-bottom: 40px;
+}
+
+/* Blog Container */
+.blog-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Blog Card */
+.blog-card {
+    background-color:black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Blog Image */
+.blog-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #333;
+}
+
+/* Blog Content */
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    line-height: 1.4;
+    transition: color 0.3s;
+}
+
+.blog-title:hover {
+    color: #e63946;
+}
+
+.blog-meta {
+    color: #777;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .blog-card {
+        width: 100%;
+    }
+}
+
+
+
+/* article css */
+
+/* Article Page Styling */
+/* Article Page Styling */
+.article-container {
+    max-width: 800px; /* This keeps the content at a fixed width */
+    margin: 40px auto; /* Centers the article horizontally and adds space at the top and bottom */
+    padding: 30px; /* Adds padding inside the container */
+    background-color: white; /* White background for a clean look */
+    box-shadow: 5 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow to create a card-like effect */
+    border-radius: 18px; /* Smooth rounded corners */
+    border: 1px solid #ddd; /* Thin border around the article */
+    text-align: center; /* Center-aligns the text inside the container */
+}
+
+
+/* Title of the Article */
+.article-container h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center; /* Centers the article title */
+    margin-bottom: 20px;
+}
+
+/* Images Inside the Article */
+.article-container img {
+    display: block;
+    margin-left: auto; /* Align image to the center */
+    margin-right: auto; /* Align image to the center */
+    margin-top: 20px; /* Adds space above the image */
+    margin-bottom: 20px; 
+    max-width: 80%; /* Ensures the image stretches to the width of the container */
+    /* max-width: 600px; /* Maximum image width */
+     /*height: 600px; Maintain aspect ratio */
+    margin: 20px 0; /* Adds margin above and below the image */
+    border-radius: 5px; /* Optional: Adds rounded corners to the images */
+}
+
+/* Paragraph Styling */
+.article-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+    margin: 20px 0; /* Adds space between paragraphs */
+}
+
+/* Anchor Links Styling */
+.article-container a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.article-container a:hover {
+    text-decoration:none ;
+}
+
+/* Centering Text and Adjusting Layout for Readability */
+.article-container {
+    text-align: justify;
+    word-wrap: break-word; /* Ensures long words or URLs break into a new line */
+}
